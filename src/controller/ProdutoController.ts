@@ -9,7 +9,7 @@ export class ProdutoController implements ProdutoRepository {
 
     public cadastrar(produto: Produto): void {
         this.listaProdutos.push(produto);
-        console.log("\n✅ Produto cadastrado com sucesso!");
+        console.log("\n Produto cadastrado com sucesso!");
     }
 
 

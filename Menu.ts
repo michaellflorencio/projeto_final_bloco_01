@@ -20,14 +20,15 @@ export function main() {
         console.log("2 - Listar produtos");
         console.log("3 - Buscar produto por ID");
         console.log("4 - Apagar Produto");
-        console.log("5 - Sair");
+        console.log("5 - Atualizar Produto");
+        console.log("6 - Sair");
         console.log("                                                     ");
         console.log("*****************************************************");
         console.log("                                                     ");
         console.log("Entre com a opção desejada: ");
         opcao = readlinesync.questionInt("");
 
-        if (opcao == 5) {
+        if (opcao == 6) {
             console.log("\nCapybara Cult Clothing - The best here!");
             sobre();
             process.exit(0);
@@ -62,6 +63,17 @@ export function main() {
                 break;
 
             case 5:
+                console.log("\n\nAtualizar Produto\n\n");
+                const idAtualizar = readlinesync.questionInt("Informe o ID do produto que deseja atualizar: ");
+                const nomeNovo = readlinesync.question("Novo nome: ");
+                const precoNovo = readlinesync.questionFloat("Novo preço: ");
+                const tamanhoNovo = readlinesync.question("Novo tamanho: ");
+
+                const produtoAtualizado = new Camiseta(idAtualizar, nomeNovo, precoNovo, tamanhoNovo);
+                produto.atualizar(produtoAtualizado);
+                break;
+
+            case 6:
                 console.log("\n\nSair\n\n");
                 sobre();
                 process.exit(0);
