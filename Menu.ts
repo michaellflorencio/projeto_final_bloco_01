@@ -1,5 +1,5 @@
 import readlinesync = require("readline-sync");
-
+import { Camiseta } from "./src/model/Camiseta";
 export function main() {
 
     let opcao: number;
@@ -25,7 +25,7 @@ export function main() {
         console.log("Entre com a opção desejada: ");
         opcao = readlinesync.questionInt("");
 
-        if (opcao == 9) {
+        if (opcao == 5) {
             console.log("\nCapybara Cult Clothing - The best here!");
             sobre();
             process.exit(0);
@@ -38,9 +38,9 @@ export function main() {
                 const nome = readlinesync.question("Nome: ");
                 const preco = readlinesync.questionFloat("Preço: ");
                 const tamanho = readlinesync.question("Tamanho: ");
-                // const produto = new Camiseta(id, nome, preco, tamanho);
+                const produto = new Camiseta(id, nome, preco, tamanho);
                 console.log("\nProduto cadastrado com sucesso!");
-                // produto.visualizar();
+                produto.visualizar();
 
                 break;
             case 2:
@@ -60,8 +60,6 @@ export function main() {
 
             default:
                 console.log("\nOpção Inválida!\n");
-
-                break;
         }
     }
 
